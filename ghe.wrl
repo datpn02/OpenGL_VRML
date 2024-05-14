@@ -1,0 +1,35 @@
+#VRML V2.0 utf8
+
+ Transform {
+	 children [
+		 Transform {
+			 children [
+				 Shape {
+					 appearance	Appearance {material Material {}
+						 texture ImageTexture {
+							 url "Images/maughe.jpg"
+						 }
+					 }
+					 geometry Box {
+						 size 6 1.6 2.6
+					 }
+				 }
+			 ]
+		 }
+		 Transform {
+			 translation 0 1.8 -1.1
+			 children [
+				 Shape {
+					 appearance	Appearance {material Material {}
+						 texture ImageTexture {
+							 url "Images/maughe.jpg"
+						 }
+					 }
+					 geometry Box {
+						 size 6 2 0.4
+					 }
+				 }
+			 ]
+		 }
+	 ]
+ }

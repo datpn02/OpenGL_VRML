@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+# Define a simple material for the ball
+DEF ballMaterial Material {
+    diffuseColor 1 0 0   # Red color
+    specularColor 0.5 0.5 0.5  # A bit of shine
+}
+
+# The ball itself (a sphere)
+Transform {
+    translation 0 0 0   # Centered at the origin
+    children [
+        Shape {
+            appearance Appearance {
+                material USE ballMaterial
+            }
+            geometry Sphere {
+                radius 1   # The radius of the ball
+            }
+        }
+    ]
+}
+

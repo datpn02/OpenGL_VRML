@@ -1,0 +1,34 @@
+# Project: VRML_program
+# Makefile created by Dev-C++ 5.7.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = testcopy1.o testcopy2.1.o VRML-Viewer.o
+LINKOBJ  = testcopy1.o testcopy2.1.o VRML-Viewer.o
+LIBS     = -L"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/lib" -L"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc "C:/Dev-Cpp 5.7.1/MinGW32/lib/libglu32.a" "C:/Dev-Cpp 5.7.1/MinGW32/lib/libglut32.a" "C:/Dev-Cpp 5.7.1/MinGW32/lib/libopengl32.a"
+INCS     = -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/include" -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/mingw32/include" -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/include" -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/mingw32/include" -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"D:/DownloadD/Dev-Cpp 5.7.1/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = VRML_program.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+testcopy1.o: testcopy1.cpp
+	$(CPP) -c testcopy1.cpp -o testcopy1.o $(CXXFLAGS)
+
+testcopy2.1.o: testcopy2.1.cpp
+	$(CPP) -c testcopy2.1.cpp -o testcopy2.1.o $(CXXFLAGS)
+
+VRML-Viewer.o: VRML-Viewer.cpp
+	$(CPP) -c VRML-Viewer.cpp -o VRML-Viewer.o $(CXXFLAGS)
